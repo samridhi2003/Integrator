@@ -86,7 +86,6 @@ router.get("/:zapId", middleware_1.authMiddleware, (req, res) => __awaiter(void 
     //@ts-ignore
     const id = req.id;
     const zapId = req.params.zapId;
-    console.log(zapId);
     const zaps = yield db_1.prismaClient.zap.findFirst({
         where: {
             id: zapId,
