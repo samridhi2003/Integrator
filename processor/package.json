@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -b && node dist/index.js"
+    "dev": "tsc -b && node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
     "@prisma/client": "^5.19.0",
     "kafkajs": "^2.2.4",
     "prisma": "^5.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.7"
   }
 }

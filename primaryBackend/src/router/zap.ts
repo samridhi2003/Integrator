@@ -26,7 +26,8 @@ router.post("/", authMiddleware, async (req, res) => {
                 actions: {
                     create: parsedData.data.actions.map((x, index) => ({
                         actionId: x.availableActionId,
-                        sortingOrder: index
+                        sortingOrder: index,
+                        metadata: x.actionMetadata
                     }))
                 }
             }
@@ -37,6 +38,7 @@ router.post("/", authMiddleware, async (req, res) => {
                 zapId: zap.id
             }
         });
+        console.log(trigger);
         await tx.zap.update({
             where: {
                 id: zap.id
@@ -50,6 +52,7 @@ router.post("/", authMiddleware, async (req, res) => {
     return res.json({
         zapId
     })
+    
 })
 
 router.get("/", authMiddleware, async (req, res) => {
